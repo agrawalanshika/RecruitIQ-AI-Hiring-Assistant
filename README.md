@@ -38,7 +38,7 @@
 9. HR can view candidates resume individually and email them
 10. Recruitment history is stored for future access
 
-## Screenshots
+## :bookmark: Screenshots
 
 <table>
   <tr>
@@ -68,7 +68,7 @@
 
 
 
-## Scoring Criteria
+## :pushpin: Scoring Criteria
 | Parameter           | Weightage |
 | ------------------- | --------- |
 | Skills Matching     | 30%       |
@@ -79,13 +79,13 @@
 
 
 
-## Recommendation Logic
+## :rotating_light: Recommendation Logic
 - Hire → Strong skill and score match
 - Review → Almost complete skill match with minor missing criteria
 - No Hire → Low overall relevance
 
 
-## Installation
+## :heavy_plus_sign: Installation
 #### Clone Repository
 ```
 git clone https://github.com/agrawalanshika/RecruitIQ-AI-Hiring-Assistant.git
@@ -107,7 +107,7 @@ GROQ_API_KEY=your_api_key
 ``` streamlit run streamapp.py ```
 
 
-## Folder Structure
+## 📁 Folder Structure
 ```text
 RecruitIQ-AI-Hiring-Assistant/
 │
@@ -120,14 +120,14 @@ RecruitIQ-AI-Hiring-Assistant/
 ```
 
 
-## Future Improvements
+## :triangular_flag_on_post: Future Improvements
 1. LinkedIn Profile Analysis
 2. Interview Scheduling
 3. Multi-HR Authentication
 4. Cloud Deployment
 
 
-## Author
+## :technologist: Author
 ### 👤 Anshika Agrawal
 
 
