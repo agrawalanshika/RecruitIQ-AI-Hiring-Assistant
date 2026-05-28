@@ -38,7 +38,7 @@
 9. HR can view candidates resume individually and email them
 10. Recruitment history is stored for future access
 
-## :bookmark: Screenshots
+## :label: Screenshots
 
 <table>
   <tr>
@@ -79,7 +79,7 @@
 
 
 
-## :rotating_light: Recommendation Logic
+## :bulb: Recommendation Logic
 - Hire → Strong skill and score match
 - Review → Almost complete skill match with minor missing criteria
 - No Hire → Low overall relevance
