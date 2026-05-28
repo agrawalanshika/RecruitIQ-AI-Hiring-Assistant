@@ -34,7 +34,8 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 6. Candidates are scored using weighted scoring
 7. Candidates are ranked automatically
 8. Reports and analytics are generated
-9. Recruitment history is stored for future access
+9. HR can view candidates resume individually and email them
+10. Recruitment history is stored for future access
 
 ## Screenshots
 
