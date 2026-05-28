@@ -1,0 +1,12 @@
+streamlit
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-core==0.1.52
+langchain-groq==0.1.4
+pydantic==1.10.13
+sentence-transformers
+matplotlib
+pandas
+seaborn
+reportlab
+PyPDF2

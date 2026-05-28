@@ -1,0 +1,14 @@
+[
+    {
+        "timestamp": "28-05-2026 15:50",
+        "job_description": "JD.txt",
+        "report_file": "data/reports/report_20260528_155029.pdf",
+        "total_candidates": 2
+    },
+    {
+        "timestamp": "28-05-2026 15:53",
+        "job_description": "Backend_Engineer_JD.txt",
+        "report_file": "data/reports/report_20260528_155316.pdf",
+        "total_candidates": 3
+    }
+]
