@@ -49,7 +49,7 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 <td>
   <img src="assets/screenshots/history.png" width="100%"/>
 </td>
-```
+
 
   </tr>
 
@@ -127,4 +127,6 @@ RecruitIQ-AI-Hiring-Assistant/
 
 
 ## Author
-👤 **Anshika Agrawal**
+##### 👤 Anshika Agrawal
+
+
