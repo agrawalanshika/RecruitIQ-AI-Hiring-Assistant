@@ -36,6 +36,35 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 8. Reports and analytics are generated
 9. Recruitment history is stored for future access
 
+## Screenshots
+
+<table>
+  <tr>
+    <td>
+      <img src="assets/screenshots/dashboard.png" width="400"/>
+    </td>
+
+<td>
+  <img src="assets/screenshots/history.png" width="400"/>
+</td>
+```
+
+  </tr>
+
+  <tr>
+    <td>
+      <img src="assets/screenshots/charts1.png" width="400"/>
+    </td>
+
+<td>
+  <img src="assets/screenshots/charts2.png" width="400"/>
+</td>
+
+
+  </tr>
+</table>
+
+
 
 ## Scoring Criteria
 | Parameter           | Weightage |
