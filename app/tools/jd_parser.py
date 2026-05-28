@@ -5,9 +5,7 @@ from app.utils.skills_database import SKILLS
 
 def parse_job_description(jd_text):
 
-    # -----------------------------------
-    # Extract Required Skills
-    # -----------------------------------
+   
 
     required_skills = []
 
@@ -19,9 +17,7 @@ def parse_job_description(jd_text):
 
     required_skills = list(set(required_skills))
 
-    # -----------------------------------
-    # Extract Minimum CGPA
-    # -----------------------------------
+    
 
     cgpa_patterns = [
 
@@ -51,9 +47,7 @@ def parse_job_description(jd_text):
 
             break
 
-    # -----------------------------------
-    # Extract Role / Job Title
-    # -----------------------------------
+   
 
     role = None
 
@@ -90,9 +84,7 @@ def parse_job_description(jd_text):
 
             break
 
-    # -----------------------------------
-    # Extract Experience
-    # -----------------------------------
+   
 
     experience_required = None
 
@@ -109,10 +101,7 @@ def parse_job_description(jd_text):
 
         experience_required = exp_match.group(1)
 
-    # -----------------------------------
-    # Extract Education
-    # -----------------------------------
-
+   
     education_keywords = [
 
         "B.Tech",
@@ -137,9 +126,7 @@ def parse_job_description(jd_text):
 
     education_required = list(set(education_required))
 
-    # -----------------------------------
-    # Final Structured JD Data
-    # -----------------------------------
+   
 
     jd_data = {
 
