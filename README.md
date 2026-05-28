@@ -56,20 +56,22 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 
 ## Installation
 ### Clone Repository
-git clone https://github.com/agrawalanshika/RecruitIQ-AI-Hiring-Assistant.git
+``` git clone https://github.com/agrawalanshika/RecruitIQ-AI-Hiring-Assistant.git
+```
 
 ### Navigate to Project
-cd RecruitIQ-AI-Hiring-Assistant
+``` cd RecruitIQ-AI-Hiring-Assistant ```
 
 ### Install Dependencies
-pip install -r requirements.txt
+``` pip install -r requirements.txt ```
 
 ### Add Environment Variables
-Create a .env file:
+``` Create a .env file:
 GROQ_API_KEY=your_api_key
+```
 
 ### Run Application
-streamlit run streamapp.py
+``` streamlit run streamapp.py ```
 
 
 ## Folder Structure
