@@ -15,9 +15,7 @@ def generate_explanation(
 
     explanation = []
 
-    # -----------------------------------
-    # Skill Match Analysis
-    # -----------------------------------
+   
 
     if len(matched_skills) >= 5:
 
@@ -47,9 +45,7 @@ def generate_explanation(
             "Very few required technical skills were detected."
         )
 
-    # -----------------------------------
-    # CGPA Evaluation
-    # -----------------------------------
+   
 
     try:
 
@@ -90,9 +86,7 @@ def generate_explanation(
             "CGPA information could not be fully evaluated."
         )
 
-    # -----------------------------------
-    # Missing Skills Analysis
-    # -----------------------------------
+   
 
     if len(missing_skills) >= 5:
 
@@ -115,9 +109,7 @@ def generate_explanation(
             "Most required technical skills are present."
         )
 
-    # -----------------------------------
-    # Project Evaluation
-    # -----------------------------------
+   
 
     if resume_data["projects"]:
 
@@ -133,10 +125,7 @@ def generate_explanation(
             "Relevant project experience was not strongly identified."
         )
 
-    # -----------------------------------
-    # Final Recommendation
-    # -----------------------------------
-
+   
     if recommendation == "Hire":
 
         explanation.append(
@@ -151,9 +140,7 @@ def generate_explanation(
             "Overall profile alignment is insufficient for hiring based on the current JD requirements."
         )
 
-    # -----------------------------------
-    # Final Combined Explanation
-    # -----------------------------------
+   
 
     final_explanation = " ".join(
 
