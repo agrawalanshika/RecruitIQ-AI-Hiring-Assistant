@@ -20,9 +20,7 @@ from app.tools.matching_engine import (
     calculate_match_score
 )
 
-# -----------------------------------
-# Resume Parser Tool
-# -----------------------------------
+
 
 @tool
 def resume_parser_tool(
@@ -53,9 +51,7 @@ def resume_parser_tool(
     return str(resume_data)
 
 
-# -----------------------------------
-# JD Parser Tool
-# -----------------------------------
+
 
 @tool
 def jd_parser_tool(
@@ -76,13 +72,6 @@ def jd_parser_tool(
     return str(jd_data)
 
 
-# -----------------------------------
-# Autonomous Resume Evaluator Tool
-# -----------------------------------
-
-# -----------------------------------
-# Autonomous Resume Evaluator Tool
-# -----------------------------------
 
 @tool
 def autonomous_resume_evaluator_tool(
@@ -97,9 +86,6 @@ def autonomous_resume_evaluator_tool(
 
     import re
 
-    # -----------------------------------
-    # Extract Resume Path
-    # -----------------------------------
 
     resume_match = re.search(
 
@@ -116,9 +102,6 @@ def autonomous_resume_evaluator_tool(
 
     resume_path = resume_match.group(1).strip().replace(",","")
 
-    # -----------------------------------
-    # Extract Job Description
-    # -----------------------------------
 
     jd_match = re.search(
 
@@ -135,9 +118,6 @@ def autonomous_resume_evaluator_tool(
 
     jd_text = jd_match.group(1).strip()
 
-    # -----------------------------------
-    # Parse Resume
-    # -----------------------------------
 
     resume_text = extract_text_from_pdf(
 
@@ -154,18 +134,13 @@ def autonomous_resume_evaluator_tool(
         cleaned_resume
     )
 
-    # -----------------------------------
-    # Parse JD
-    # -----------------------------------
+
 
     jd_data = parse_job_description(
 
         jd_text
     )
 
-    # -----------------------------------
-    # Calculate Match
-    # -----------------------------------
 
     result = calculate_match_score(
 
