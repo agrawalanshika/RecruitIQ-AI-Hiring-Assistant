@@ -42,11 +42,11 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 <table>
   <tr>
     <td>
-      <img src="assets/screenshots/dashboard.png" width="400"/>
+      <img src="assets/screenshots/dashboard.png" width="100%"/>
     </td>
 
 <td>
-  <img src="assets/screenshots/history.png" width="400"/>
+  <img src="assets/screenshots/history.png" width="100%"/>
 </td>
 ```
 
@@ -54,11 +54,11 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 
   <tr>
     <td>
-      <img src="assets/screenshots/charts1.png" width="400"/>
+      <img src="assets/screenshots/charts1.png" width="100%"/>
     </td>
 
 <td>
-  <img src="assets/screenshots/charts2.png" width="400"/>
+  <img src="assets/screenshots/charts2.png" width="100%"/>
 </td>
 
 
