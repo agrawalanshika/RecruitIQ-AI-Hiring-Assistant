@@ -8,9 +8,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# -----------------------------------
-# Load LLM
-# -----------------------------------
 
 llm = ChatGroq(
 
@@ -19,9 +16,6 @@ llm = ChatGroq(
     temperature=0
 )
 
-# -----------------------------------
-# Prompt Template
-# -----------------------------------
 
 prompt = PromptTemplate(
 
@@ -59,9 +53,7 @@ Give professional HR-style analysis.
 """
 )
 
-# -----------------------------------
-# Workflow Chain
-# -----------------------------------
+
 
 workflow_chain = LLMChain(
 
@@ -70,9 +62,6 @@ workflow_chain = LLMChain(
     prompt=prompt
 )
 
-# -----------------------------------
-# Run Workflow Agent
-# -----------------------------------
 
 def run_workflow_agent(
 
@@ -81,9 +70,6 @@ def run_workflow_agent(
     ranked_candidates
 ):
 
-    # -----------------------------------
-    # Build Candidate Summary
-    # -----------------------------------
 
     candidate_summary = ""
 
@@ -118,9 +104,7 @@ Explanation:
 
 """
 
-    # -----------------------------------
-    # Invoke LLM
-    # -----------------------------------
+   
 
     response = workflow_chain.run({
 
