@@ -19,9 +19,6 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.pagesizes import letter
 
 
-# ==========================================
-# TOP SKILLS CHART
-# ==========================================
 
 def generate_top_skills_chart(
 
@@ -112,9 +109,6 @@ def generate_top_skills_chart(
     return chart_path
 
 
-# ==========================================
-# SKILL MATCH HEATMAP
-# ==========================================
 
 def generate_skill_heatmap(
 
@@ -234,9 +228,7 @@ def generate_skill_heatmap(
     return heatmap_path
 
 
-# ==========================================
-# PDF REPORT GENERATOR
-# ==========================================
+
 
 def generate_pdf_report(
 
@@ -256,9 +248,7 @@ def generate_pdf_report(
 
     story = []
 
-    # ===================================
-    # TITLE
-    # ===================================
+    
 
     title = Paragraph(
 
@@ -274,9 +264,7 @@ def generate_pdf_report(
         Spacer(1, 20)
     )
 
-    # ===================================
-    # SUMMARY
-    # ===================================
+   
 
     summary = """
 
@@ -300,18 +288,14 @@ def generate_pdf_report(
         Spacer(1, 25)
     )
 
-    # ===================================
-    # DATAFRAME
-    # ===================================
+   
 
     df = pd.DataFrame(
 
         ranked_candidates
     )
 
-    # ===================================
-    # CANDIDATE SCORE CHART
-    # ===================================
+   
 
     plt.figure(
 
@@ -354,9 +338,7 @@ def generate_pdf_report(
 
     plt.close()
 
-    # ===================================
-    # PIE CHART
-    # ===================================
+   
 
     hire_counts = df[
         "Recommendation"
@@ -392,9 +374,7 @@ def generate_pdf_report(
 
     plt.close()
 
-    # ===================================
-    # ANALYTICS DASHBOARD
-    # ===================================
+    
 
     story.append(
 
@@ -452,9 +432,7 @@ def generate_pdf_report(
         Spacer(1, 30)
     )
 
-    # ===================================
-    # TOP SKILLS CHART
-    # ===================================
+  
 
     top_skills_chart = (
 
@@ -495,9 +473,7 @@ def generate_pdf_report(
         Spacer(1, 25)
     )
 
-    # ===================================
-    # SKILL HEATMAP
-    # ===================================
+   
 
     heatmap_chart = (
 
@@ -538,9 +514,7 @@ def generate_pdf_report(
         PageBreak()
     )
 
-    # ===================================
-    # CANDIDATE DETAILS
-    # ===================================
+   
 
     for idx, candidate in enumerate(
 
@@ -610,9 +584,7 @@ def generate_pdf_report(
             Spacer(1, 25)
         )
 
-    # ===================================
-    # BUILD PDF
-    # ===================================
+    
 
     doc.build(story)
 
