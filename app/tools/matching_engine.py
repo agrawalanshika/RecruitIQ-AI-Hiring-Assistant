@@ -1,8 +1,6 @@
 def calculate_match_score(resume_data, jd_data):
 
-    # =============================
-    # SKILLS MATCHING
-    # =============================
+   
 
     resume_skills = set(
 
@@ -36,9 +34,7 @@ def calculate_match_score(resume_data, jd_data):
 
         skills_score = 0
 
-    # =============================
-    # CGPA MATCHING
-    # =============================
+   
 
     cgpa_score = 0
 
@@ -76,9 +72,7 @@ def calculate_match_score(resume_data, jd_data):
 
         required_cgpa = 0
 
-    # =============================
-    # EDUCATION MATCHING
-    # =============================
+    
 
     education_score = 0
 
@@ -118,9 +112,7 @@ def calculate_match_score(resume_data, jd_data):
 
         education_score = 5
 
-    # =============================
-    # PROJECT MATCHING
-    # =============================
+   
 
     project_score = 0
 
@@ -158,20 +150,10 @@ def calculate_match_score(resume_data, jd_data):
 
         project_score = 5
 
-    # =============================
-    # COMMUNICATION SCORE
-    # =============================
-
+   
     communication_score = 8
 
-    # Future Improvements:
-    # - Grammar analysis
-    # - Resume readability
-    # - LLM explanation quality
-
-    # =============================
-    # FINAL WEIGHTED SCORE
-    # =============================
+    
 
     final_score = (
 
@@ -187,9 +169,7 @@ def calculate_match_score(resume_data, jd_data):
 
     )
 
-    # =============================
-    # RECOMMENDATION LOGIC
-    # =============================
+    
 
     recommendation = "No Hire"
 
@@ -197,9 +177,7 @@ def calculate_match_score(resume_data, jd_data):
 
     cgpa_ok = candidate_cgpa >= required_cgpa
 
-    # --------------------------------
-    # HIRE
-    # --------------------------------
+   
 
     if (
 
@@ -211,9 +189,7 @@ def calculate_match_score(resume_data, jd_data):
 
         recommendation = "Hire"
 
-    # --------------------------------
-    # REVIEW
-    # --------------------------------
+
 
     elif (
 
@@ -223,17 +199,13 @@ def calculate_match_score(resume_data, jd_data):
 
         recommendation = "Review"
 
-    # --------------------------------
-    # NO HIRE
-    # --------------------------------
+   
 
     else:
 
         recommendation = "No Hire"
 
-    # =============================
-    # FINAL RESULT
-    # =============================
+
 
     result = {
 
