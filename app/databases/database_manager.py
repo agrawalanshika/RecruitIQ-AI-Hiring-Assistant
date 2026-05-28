@@ -1,9 +1,7 @@
 import sqlite3
 
 
-# -----------------------------------
-# Connect to Database
-# -----------------------------------
+
 
 def connect_db():
 
@@ -15,9 +13,7 @@ def connect_db():
     return conn
 
 
-# -----------------------------------
-# Create Candidates Table
-# -----------------------------------
+
 
 def create_table():
 
@@ -59,9 +55,7 @@ def create_table():
     conn.close()
 
 
-# -----------------------------------
-# Check Existing Candidate
-# -----------------------------------
+
 
 def candidate_exists(email):
 
@@ -91,9 +85,6 @@ def candidate_exists(email):
     return result is not None
 
 
-# -----------------------------------
-# Insert Candidate
-# -----------------------------------
 
 def insert_candidate(
 
@@ -152,9 +143,7 @@ def insert_candidate(
     conn.close()
 
 
-# -----------------------------------
-# Update Existing Candidate
-# -----------------------------------
+
 
 def update_candidate(
 
@@ -219,9 +208,6 @@ def update_candidate(
     conn.close()
 
 
-# -----------------------------------
-# Save or Update Candidate
-# -----------------------------------
 
 def save_candidate(
 
@@ -246,9 +232,6 @@ def save_candidate(
         )
 
 
-# -----------------------------------
-# Fetch All Candidates
-# -----------------------------------
 
 def fetch_candidates():
 
