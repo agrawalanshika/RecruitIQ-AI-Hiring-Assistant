@@ -56,7 +56,7 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 
 ## Installation
 ### Clone Repository
-git clone https://github.com/yourusername/RecruitIQ-AI-Hiring-Assistant.git
+git clone https://github.com/agrawalanshika/RecruitIQ-AI-Hiring-Assistant.git
 
 ### Navigate to Project
 cd RecruitIQ-AI-Hiring-Assistant
@@ -73,6 +73,7 @@ streamlit run streamapp.py
 
 
 ## Folder Structure
+```text
 RecruitIQ-AI-Hiring-Assistant/
 │
 ├── app/
@@ -81,14 +82,15 @@ RecruitIQ-AI-Hiring-Assistant/
 ├── main.py
 ├── requirements.txt
 ├── README.md
+```
 
 
 ## Future Improvements
-LinkedIn Profile Analysis
-Interview Scheduling
-Multi-HR Authentication
-Cloud Deployment
+1. LinkedIn Profile Analysis
+2. Interview Scheduling
+3. Multi-HR Authentication
+4. Cloud Deployment
 
 
 ## Author
-Anshika Agrawal
+👤 Anshika Agrawal
