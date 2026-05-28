@@ -17,12 +17,12 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 
 
 ## Tech Stack
-- Frontend using Streamlit 
-- Backend with Python 
-- Langchain and Groq LLM as core AI tools
-- SQLite for Database
-- Visualization using Matplotlib and Seaborn
-- Report Generation using Report Lab
+- **Frontend using Streamlit**
+- **Backend with Python**
+- **Langchain and Groq LLM as core AI tools**
+- **SQLite for Database**
+- **Visualization using Matplotlib and Seaborn**
+- **Report Generation using Report Lab**
 
 
 ## Project Workflow
@@ -96,4 +96,4 @@ RecruitIQ-AI-Hiring-Assistant/
 
 
 ## Author
-👤 Anshika Agrawal
+👤 **Anshika Agrawal**
