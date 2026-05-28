@@ -128,6 +128,6 @@ RecruitIQ-AI-Hiring-Assistant/
 
 
 ## :technologist: Author
-### 👤 Anshika Agrawal
+### Anshika Agrawal
 
 
