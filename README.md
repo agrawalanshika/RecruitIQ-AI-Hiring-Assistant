@@ -1,5 +1,5 @@
 # 📑 RecruitIQ-AI-Hiring-Assistant
-AI-powered resume screening and recruitment platform with semantic matching, candidate ranking, PDF reporting, recruitment history, and secure HR login dashboard built using Streamlit and LangChain.
+Intelligent AI hiring assistant developed with Python, Streamlit, and LangChain that automates resume screening, skill matching, candidate ranking, and recruitment workflow management through an interactive HR dashboard.
 
 
 
