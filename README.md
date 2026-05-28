@@ -3,7 +3,7 @@
 
 
 
-## Features
+## 🚀 Features
 - Resume Parsing
 - Job Description Analysis
 - Skill Matching Engine
@@ -17,7 +17,7 @@
 - Interactive Streamlit Dashboard
 
 
-## Tech Stack
+## :memo: Tech Stack
 - **Frontend using Streamlit**
 - **Backend with Python**
 - **Langchain and Groq LLM as core AI tools**
@@ -26,7 +26,7 @@
 - **Report Generation using Report Lab**
 
 
-## Project Workflow
+## :arrow_down: Project Workflow
 1. HR logs into the platform securely
 2. HR uploads Job Description file
 3. Multiple resumes are uploaded
