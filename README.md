@@ -38,10 +38,57 @@ AI-powered resume screening and recruitment platform with semantic matching, can
 
 
 ## Scoring Criteria
+| Parameter           | Weightage |
+| ------------------- | --------- |
+| Skills Matching     | 30%       |
+| CGPA Matching       | 25%       |
+| Project Relevance   | 20%       |
+| Education Matching  | 15%       |
+| Communication Score | 10%       |
 
 
 
 ## Recommendation Logic
-Hire → Strong skill and score match
-Review → Almost complete skill match with minor missing criteria
-No Hire → Low overall relevance
+- Hire → Strong skill and score match
+- Review → Almost complete skill match with minor missing criteria
+- No Hire → Low overall relevance
+
+
+## Installation
+### Clone Repository
+git clone https://github.com/yourusername/RecruitIQ-AI-Hiring-Assistant.git
+
+### Navigate to Project
+cd RecruitIQ-AI-Hiring-Assistant
+
+### Install Dependencies
+pip install -r requirements.txt
+
+### Add Environment Variables
+Create a .env file:
+GROQ_API_KEY=your_api_key
+
+### Run Application
+streamlit run streamapp.py
+
+
+## Folder Structure
+RecruitIQ-AI-Hiring-Assistant/
+│
+├── app/
+├── data/
+├── streamapp.py
+├── main.py
+├── requirements.txt
+├── README.md
+
+
+## Future Improvements
+LinkedIn Profile Analysis
+Interview Scheduling
+Multi-HR Authentication
+Cloud Deployment
+
+
+## Author
+Anshika Agrawal
