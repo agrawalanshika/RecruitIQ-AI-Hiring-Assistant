@@ -6,9 +6,6 @@ from sentence_transformers import (
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-# -----------------------------------
-# Load Embedding Model
-# -----------------------------------
 
 model = SentenceTransformer(
 
@@ -16,9 +13,6 @@ model = SentenceTransformer(
 )
 
 
-# -----------------------------------
-# Semantic Similarity Function
-# -----------------------------------
 
 def calculate_semantic_similarity(
 
