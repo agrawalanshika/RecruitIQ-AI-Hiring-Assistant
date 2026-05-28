@@ -5,9 +5,7 @@ import seaborn as sns
 import pandas as pd
 
 
-# ==========================================
-# TOP SKILLS CHART GENERATOR
-# ==========================================
+
 
 def generate_top_skills_chart(
 
@@ -34,15 +32,11 @@ def generate_top_skills_chart(
 
         all_skills.extend(skills)
 
-    # --------------------------------------
-    # Count skill frequency
-    # --------------------------------------
+  
 
     skill_counts = Counter(all_skills)
 
-    # --------------------------------------
-    # Top 10 skills
-    # --------------------------------------
+    
 
     top_skills = skill_counts.most_common(10)
 
@@ -60,10 +54,7 @@ def generate_top_skills_chart(
         for item in top_skills
     ]
 
-    # --------------------------------------
-    # Create chart
-    # --------------------------------------
-
+    
     plt.figure(
 
         figsize=(10, 5)
@@ -97,9 +88,7 @@ def generate_top_skills_chart(
 
     plt.tight_layout()
 
-    # --------------------------------------
-    # Save chart image
-    # --------------------------------------
+    
 
     chart_path = "data/reports/top_skills_chart.png"
 
@@ -113,19 +102,14 @@ def generate_top_skills_chart(
     return chart_path
 
 
-# ==========================================
-# SKILL MATCH HEATMAP
-# ==========================================
+
 
 def generate_skill_heatmap(
 
     ranked_candidates
 ):
 
-    # --------------------------------------
-    # Collect all skills
-    # --------------------------------------
-
+   
     all_skills = []
 
     for candidate in ranked_candidates:
@@ -146,9 +130,7 @@ def generate_skill_heatmap(
 
         all_skills.extend(skills)
 
-    # --------------------------------------
-    # Top 10 skills
-    # --------------------------------------
+    
 
     skill_counts = Counter(all_skills)
 
@@ -159,9 +141,7 @@ def generate_skill_heatmap(
         for skill in skill_counts.most_common(10)
     ]
 
-    # --------------------------------------
-    # Create matrix
-    # --------------------------------------
+   
 
     matrix_data = []
 
@@ -200,9 +180,7 @@ def generate_skill_heatmap(
 
         matrix_data.append(row)
 
-    # --------------------------------------
-    # DataFrame
-    # --------------------------------------
+   
 
     df = pd.DataFrame(
 
@@ -213,9 +191,7 @@ def generate_skill_heatmap(
         columns=top_skills
     )
 
-    # --------------------------------------
-    # Plot Heatmap
-    # --------------------------------------
+    
 
     plt.figure(
 
@@ -242,10 +218,7 @@ def generate_skill_heatmap(
 
     plt.tight_layout()
 
-    # --------------------------------------
-    # Save chart
-    # --------------------------------------
-
+   
     heatmap_path = (
 
         "data/reports/skill_heatmap.png"
@@ -261,18 +234,14 @@ def generate_skill_heatmap(
     return heatmap_path
 
 
-# ==========================================
-# HTML REPORT GENERATOR
-# ==========================================
+
 
 def generate_html_report(
 
     ranked_candidates
 ):
 
-    # ======================================
-    # GENERATE CHARTS
-    # ======================================
+   
 
     chart_path = generate_top_skills_chart(
 
@@ -284,9 +253,7 @@ def generate_html_report(
         ranked_candidates
     )
 
-    # ======================================
-    # HTML CONTENT
-    # ======================================
+   
 
     html_content = f"""
 
@@ -406,9 +373,7 @@ def generate_html_report(
 
     """
 
-    # ======================================
-    # ADD TABLE ROWS
-    # ======================================
+    
 
     for index, candidate in enumerate(
 
@@ -439,9 +404,7 @@ def generate_html_report(
 
         """
 
-    # ======================================
-    # ADD ANALYTICS CHARTS
-    # ======================================
+    
 
     html_content += f"""
 
@@ -469,10 +432,7 @@ def generate_html_report(
 
     """
 
-    # ======================================
-    # SAVE REPORT
-    # ======================================
-
+    
     os.makedirs(
 
         "data/reports",
