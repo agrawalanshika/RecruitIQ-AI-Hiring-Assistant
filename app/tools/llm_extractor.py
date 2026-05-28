@@ -6,16 +6,11 @@ import gender_guesser.detector as gender
 
 def extract_resume_data(resume_text):
 
-    # -----------------------------
-    # Prepare Lines
-    # -----------------------------
+
 
     lines = resume_text.split("\n")
 
-    # -----------------------------
-    # Extract Name
-    # -----------------------------
-
+   
     probable_name = ""
 
     for line in lines[:10]:
@@ -39,10 +34,7 @@ def extract_resume_data(resume_text):
             probable_name = line
             break
 
-    # -----------------------------
-    # Extract Email
-    # -----------------------------
-
+   
     email = re.findall(
 
          r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b",
@@ -50,9 +42,7 @@ def extract_resume_data(resume_text):
         resume_text
     )
 
-    # -----------------------------
-    # Extract Phone Number
-    # -----------------------------
+    
 
     phone = re.findall(
 
@@ -61,9 +51,7 @@ def extract_resume_data(resume_text):
         resume_text
     )
 
-    # -----------------------------
-    # Extract CGPA / GPA
-    # -----------------------------
+    
 
     cgpa_patterns = [
 
@@ -92,9 +80,7 @@ def extract_resume_data(resume_text):
             cgpa = match.group(1)
             break
 
-    # -----------------------------
-    # Extract Skills
-    # -----------------------------
+   
 
     found_skills = []
 
@@ -106,9 +92,7 @@ def extract_resume_data(resume_text):
 
     found_skills = list(set(found_skills))
 
-    # -----------------------------
-    # Extract Education
-    # -----------------------------
+   
 
     education_keywords = [
 
@@ -134,9 +118,7 @@ def extract_resume_data(resume_text):
 
     education_found = list(set(education_found))
 
-    # -----------------------------
-    # Extract Projects + Tech Stack
-    # -----------------------------
+   
 
     projects = []
 
@@ -185,9 +167,7 @@ def extract_resume_data(resume_text):
         # Detect project titles
         if "|" in clean_line or " - " in clean_line:
 
-            # -----------------------------------
-            # Detect Tech Stack
-            # -----------------------------------
+            
 
             tech_stack = []
 
@@ -197,9 +177,7 @@ def extract_resume_data(resume_text):
 
                     tech_stack.append(skill)
 
-            # -----------------------------------
-            # Split Project Title
-            # -----------------------------------
+            
 
             parts = re.split(
 
@@ -233,9 +211,7 @@ def extract_resume_data(resume_text):
                 "tech_stack": list(set(tech_stack))
             })
 
-    # -----------------------------
-    # Remove Duplicate Projects
-    # -----------------------------
+   
 
     unique_projects = []
 
@@ -251,9 +227,7 @@ def extract_resume_data(resume_text):
 
             seen.add(key)
 
-    # -----------------------------
-    # Final Structured Data
-    # -----------------------------
+    
 
     data = {
 
