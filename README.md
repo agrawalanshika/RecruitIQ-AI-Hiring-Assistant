@@ -98,7 +98,8 @@ git clone https://github.com/agrawalanshika/RecruitIQ-AI-Hiring-Assistant.git
 ``` pip install -r requirements.txt ```
 
 #### Add Environment Variables
-``` Create a .env file:
+Create a .env file:
+```
 GROQ_API_KEY=your_api_key
 ```
 
