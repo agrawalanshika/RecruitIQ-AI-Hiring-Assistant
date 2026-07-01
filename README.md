@@ -3,7 +3,7 @@
 
 ## 🎯 Motivation
 
-The increasing number of job applications has made the recruitment process time-consuming and challenging for HR teams. Manually screening resumes is often inefficient, prone to human bias, and may result in qualified candidates being overlooked. RecruitIQ was developed to automate the initial stages of recruitment using Artificial Intelligence techniques. By analyzing resumes, matching them with job descriptions, ranking candidates, and generating hiring recommendations, the system helps recruiters make faster, more accurate, and objective hiring decisions while reducing manual effort.
+The increasing number of job applications has made the recruitment process time-consuming and challenging for HR teams. Manually screening resumes is often inefficient, prone to human bias, and may result in qualified candidates being overlooked. RecruitIQ was developed to automate the initial stages of recruitment by analyzing resumes, matching them with job descriptions, ranking candidates, and generating hiring recommendations, the system helps recruiters make faster, more accurate, and objective hiring decisions while reducing manual effort.
 
 
 ## 🚀 Features
