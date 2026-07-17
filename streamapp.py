@@ -27,31 +27,19 @@ import base64
 import json
 from datetime import datetime
 
-# ===================================
-# HR LOGIN CREDENTIALS
-# ===================================
 
 HR_USERNAME = "admin"
 
 HR_PASSWORD = "hr123"
 
-# ===================================
-# SESSION STATE
-# ===================================
 
 if "logged_in" not in st.session_state:
 
     st.session_state.logged_in = False
 
-# -----------------------------------
-# Initialize Database
-# -----------------------------------
 
 create_table()
 
-# -----------------------------------
-# Background Image Function
-# -----------------------------------
 
 def set_bg_image(image_file):
 
@@ -88,9 +76,6 @@ def set_bg_image(image_file):
         unsafe_allow_html=True
     )
 
-# -----------------------------------
-# Page Config
-# -----------------------------------
 
 st.set_page_config(
 
@@ -103,15 +88,9 @@ st.set_page_config(
 set_bg_image(
     "bg.png"
 )
-# ===================================
-# LOGIN PAGE
-# ===================================
 
 if not st.session_state.logged_in:
 
-    # -----------------------------------
-    # CENTER LOGIN BOX
-    # -----------------------------------
 
     left_col, center_col, right_col = st.columns([1, 2, 1])
 
@@ -183,9 +162,7 @@ if not st.session_state.logged_in:
                     )
 
         st.stop()
-# -----------------------------------
-# Title
-# -----------------------------------
+
 
 
 
@@ -193,13 +170,6 @@ if not st.session_state.logged_in:
         "AI-powered recruitment intelligence and candidate screening platform"
     )
 
- # ===================================
-# AFTER LOGIN SUCCESS
-# ===================================
-
-# -----------------------------------
-# LOGOUT BUTTON
-# -----------------------------------
 
 if st.sidebar.button("Logout"):
 
@@ -213,9 +183,7 @@ if st.sidebar.button("Logout"):
 
         st.rerun()
 
-# -----------------------------------
-# LOGGED IN USER
-# -----------------------------------
+
 
 st.sidebar.success(
 
@@ -223,9 +191,7 @@ st.sidebar.success(
 
 )
 
-# -----------------------------------
-# NAVIGATION MENU
-# -----------------------------------
+
 
 page = st.sidebar.radio(
 
@@ -240,10 +206,6 @@ page = st.sidebar.radio(
     ]
 
 )
-
-# -----------------------------------
-# DASHBOARD PAGE
-# -----------------------------------
 
 if page == "Dashboard":
 
@@ -286,25 +248,16 @@ if page == "Dashboard":
         accept_multiple_files=True
     )
 
-    # -----------------------------------
-    # Analyze Button
-    # -----------------------------------
 
     if st.sidebar.button("Analyze Candidates"):
 
         if jd_file and resume_files:
 
-            # -----------------------------------
-            # Read JD
-            # -----------------------------------
 
             jd_text = jd_file.read().decode("utf-8")
 
             jd_data = parse_job_description(jd_text)
 
-            # -----------------------------------
-            # Process Resumes
-            # -----------------------------------
 
             candidate_results = []
 
@@ -324,9 +277,6 @@ if page == "Dashboard":
                     uploaded_file.name
                 )
 
-                # -----------------------------------
-                # Save Uploaded PDF
-                # -----------------------------------
 
                 with open(temp_path, "wb") as f:
 
@@ -335,28 +285,18 @@ if page == "Dashboard":
                         uploaded_file.getbuffer()
                     )
 
-                # -----------------------------------
-                # Extract Resume Text
-                # -----------------------------------
 
                 resume_text = extract_text_from_pdf(
 
                     temp_path
                 )
 
-                # -----------------------------------
-                # Clean Resume
-                # -----------------------------------
 
                 cleaned_resume = clean_resume_text(
 
                     resume_text
                 )
-
-                # -----------------------------------
-                # Semantic Similarity
-                # -----------------------------------
-
+                
                 semantic_score = calculate_semantic_similarity(
 
                     cleaned_resume,
@@ -364,18 +304,13 @@ if page == "Dashboard":
                     jd_text
                 )
 
-                # -----------------------------------
-                # Structured Extraction
-                # -----------------------------------
 
                 resume_data = extract_resume_data(
 
                     cleaned_resume
                 )
 
-                # -----------------------------------
-                # Match Score
-                # -----------------------------------
+             
 
                 match_result = calculate_match_score(
 
@@ -384,9 +319,6 @@ if page == "Dashboard":
                     jd_data
                 )
 
-                # -----------------------------------
-                # Generate Explanation
-                # -----------------------------------
 
                 explanation = generate_explanation(
 
@@ -397,9 +329,6 @@ if page == "Dashboard":
                     jd_data
                 )
 
-                # -----------------------------------
-                # Candidate Data
-                # -----------------------------------
 
                 candidate_data = {
 
@@ -450,27 +379,19 @@ if page == "Dashboard":
                         temp_path
                 }
 
-                # -----------------------------------
-                # Add to Results
-                # -----------------------------------
-
+        
                 candidate_results.append(
 
                     candidate_data
                 )
 
-                # -----------------------------------
-                # Save Candidate
-                # -----------------------------------
+    
 
                 save_candidate(
 
                     candidate_data
                 )
 
-            # -----------------------------------
-            # Rank Candidates
-            # -----------------------------------
 
             ranked_candidates = sorted(
 
@@ -484,13 +405,6 @@ if page == "Dashboard":
                 reverse=True
             )
 
-            # -----------------------------------
-            # Generate PDF Report
-            # -----------------------------------
-
-            # ===================================
-            # UNIQUE REPORT NAME
-            # ===================================
 
             timestamp_str = datetime.now().strftime(
                 "%Y%m%d_%H%M%S"
@@ -498,9 +412,7 @@ if page == "Dashboard":
 
             pdf_report_path = f"data/reports/report_{timestamp_str}.pdf"
 
-            # ===================================
-            # GENERATE PDF REPORT
-            # ===================================
+ 
 
             generate_pdf_report(
 
@@ -509,9 +421,7 @@ if page == "Dashboard":
                 output_path=pdf_report_path
             )
 
-            # -----------------------------------
-            # Run Workflow AI Agent
-            # -----------------------------------
+
 
             with st.spinner(
 
@@ -534,26 +444,16 @@ if page == "Dashboard":
                         f"Workflow Agent Error: {str(e)}"
                     )
 
-            # -----------------------------------
-            # Create DataFrame
-            # -----------------------------------
-
             df = pd.DataFrame(
 
                 ranked_candidates
             )
 
-            # -----------------------------------
-            # Success Message
-            # -----------------------------------
 
             st.success(
                 "Analysis Completed Successfully!"
             )
 
-                    # ===================================
-            # SAVE SESSION HISTORY
-            # ===================================
 
             history_file = "data/history/history.json"
 
@@ -596,9 +496,6 @@ if page == "Dashboard":
                     indent=4
                 )
 
-            # ===================================
-            # DASHBOARD METRICS
-            # ===================================
 
             total_candidates = len(df)
 
@@ -628,9 +525,6 @@ if page == "Dashboard":
                 2
             )
 
-            # -----------------------------------
-            # Metric Cards
-            # -----------------------------------
 
             col1, col2, col3, col4 = st.columns(4)
 
@@ -662,9 +556,7 @@ if page == "Dashboard":
                 top_score
             )
 
-            # ===================================
-            # AI WORKFLOW ANALYSIS
-            # ===================================
+           
 
             st.header(
                 "AI Hiring Insights"
@@ -675,32 +567,23 @@ if page == "Dashboard":
                 workflow_analysis
             )
 
-                    # ===================================
-            # DOWNLOAD REPORTS
-            # ===================================
+           
 
             st.header(
                 "Download Reports"
             )
 
-    # -----------------------------------
-    # CSV DATA
-    # -----------------------------------
 
             csv = df.to_csv(
 
                 index=False
             ).encode("utf-8")
 
-            # ===================================
-            # SIDE BY SIDE BUTTONS
-            # ===================================
+        
 
             download_col1, download_col2 = st.columns(2)
 
-            # -----------------------------------
-            # CSV BUTTON
-            # -----------------------------------
+         
 
             with download_col1:
 
@@ -717,9 +600,7 @@ if page == "Dashboard":
                     use_container_width=True
                 )
 
-            # -----------------------------------
-            # PDF BUTTON
-            # -----------------------------------
+           
 
             with open(
 
@@ -745,15 +626,11 @@ if page == "Dashboard":
                     use_container_width=True
                 )
 
-    # ===================================
-    # RANKED CANDIDATES
-    # ===================================
+    
 
             st.header("Candidates")
 
-            # ===================================
-            # CARD STYLING
-            # ===================================
+ 
 
             st.markdown(
                 """
@@ -787,9 +664,7 @@ if page == "Dashboard":
                 unsafe_allow_html=True
             )
 
-            # ===================================
-            # DISPLAY 3 CANDIDATES PER ROW
-            # ===================================
+           
 
             for i in range(0, len(ranked_candidates), 2):
 
@@ -803,24 +678,18 @@ if page == "Dashboard":
 
                         with cols[j]:
 
-                            # -----------------------------------
-                            # CLEAN EMAIL
-                            # -----------------------------------
+                       
 
                             email = candidate["Email"]
 
                             if "," in email:
                                 email = email.split(",")[0]
 
-                            # ===================================
-                            # CARD CONTAINER
-                            # ===================================
+                            
 
                             with st.container(border=True):
 
-                                # -----------------------------------
-                                # NAME
-                                # -----------------------------------
+                        
 
                                 st.markdown(
                                     f"""
@@ -831,13 +700,6 @@ if page == "Dashboard":
                                     unsafe_allow_html=True
                                 )
 
-                                # -----------------------------------
-                                # DETAILS
-                                # -----------------------------------
-
-    # ===================================
-    # CANDIDATE DETAILS
-    # ===================================
 
                                 st.markdown(
                                     f"""
@@ -854,17 +716,11 @@ if page == "Dashboard":
                                     unsafe_allow_html=True
                                 )
 
-                                # ===================================
-                                # RECOMMENDATION BADGE
-                                # ===================================
+                               
 
                                 recommendation = candidate["Recommendation"]
 
-                                
-
-                                # ===================================
-                                # RECOMMENDATION COLORS
-                                # ===================================
+                            
 
                                 if recommendation == "Hire":
 
@@ -900,11 +756,7 @@ if page == "Dashboard":
                                     unsafe_allow_html=True
                                 )
 
-                                
-
-                                # # ===================================
-                                # # MATCHED SKILLS TAGS
-                                # # ===================================
+        
 
                                 # skills = candidate["Matched Skills"].split(",")
 
@@ -939,19 +791,11 @@ if page == "Dashboard":
                                 #     unsafe_allow_html=True
                                 # )
 
-                                # ===================================
-                                # MISSING SKILLS TAGS
-                                # ===================================
-
-                                # ===================================
-                                # BUTTONS IN SAME LINE
-                                # ===================================
+                
 
                                 button_col1, button_col2 = st.columns(2)
 
-                                # -----------------------------------
-                                # VIEW RESUME BUTTON
-                                # -----------------------------------
+                            
 
                                 with button_col1:
 
@@ -973,9 +817,6 @@ if page == "Dashboard":
                                         use_container_width=True
                                     )
 
-                                # -----------------------------------
-                                # SEND EMAIL BUTTON
-                                # -----------------------------------
 
                                 with button_col2:
 
@@ -987,9 +828,6 @@ if page == "Dashboard":
                                         "Recommendation"
                                     ]
 
-                                    # -----------------------------------
-                                    # EMAIL CONTENT
-                                    # -----------------------------------
 
                                     if recommendation == "Hire":
 
@@ -1048,9 +886,6 @@ if page == "Dashboard":
     HR Recruitment Team
             """
 
-                                    # -----------------------------------
-                                    # MAIL LINK
-                                    # -----------------------------------
 
                                     mailto_link = (
                                         f"mailto:{email}"
@@ -1065,27 +900,13 @@ if page == "Dashboard":
                                     )
         
 
-        # ===================================
-        # WARNING
-        # ===================================
 
         else:
 
             st.warning(
                 "Please upload both JD and resumes."
             )
-    # ===================================
-    # RECRUITMENT HISTORY
-    # ===================================
-
-    # ===================================
-    # SIDEBAR NAVIGATION
-    # ===================================
-
-
-# ===================================
-# RECRUITMENT HISTORY PAGE
-# ===================================
+  
 
 elif page == "Recruitment History":
 
