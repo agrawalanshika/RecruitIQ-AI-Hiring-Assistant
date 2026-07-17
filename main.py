@@ -10,19 +10,12 @@ from app.tools.report_generator import generate_html_report
 
 
 
-# -----------------------------
-# Load Job Description
-# -----------------------------
-
 with open("data/sample_jd.txt", "r", encoding="utf-8") as file:
 
     jd_text = file.read()
 
 jd_data = parse_job_description(jd_text)
 
-# -----------------------------
-# Process All Resumes
-# -----------------------------
 
 resume_folder = "data/resumes"
 
@@ -65,18 +58,12 @@ for filename in os.listdir(resume_folder):
 
         })
 
-# -----------------------------
-# Rank Candidates
-# -----------------------------
 
 ranked_candidates = rank_candidates(
 
     candidate_results
 )
 
-# -----------------------------
-# Print Final Ranking
-# -----------------------------
 
 print("\n=========== FINAL RANKING ===========\n")
 
@@ -114,9 +101,6 @@ for index, candidate in enumerate(ranked_candidates):
 
     print("\n----------------------------------\n")
 
-    # -----------------------------
-# Generate HTML Report
-# -----------------------------
 
 report_path = generate_html_report(
 
